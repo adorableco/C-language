@@ -4,16 +4,12 @@
 
 int main()
 {
-    int sum = 0;
+    int sum;
     int N,result=0;
     
     scanf("%d",&N);
-    
-    for (int i = 1; i <= N+1; i++)
-    {
-        sum+=i;
-    }
-    sum = sum*2/(N+1);
+
+    sum = (N+2);
     
     for (int i = 1 ; i <= N; i++)
     {
@@ -23,3 +19,4 @@ int main()
     printf("%d\n",result);
     return 0;
 }
+
