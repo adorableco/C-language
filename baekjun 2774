@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int num = 0;
+    scanf("%d",&num);
+    int in[num];
+    int out[100]={0,};
+    int check[10]={0,1,2,3,4,5,6,7,8,9};
+    
+    //check할 숫자를 입력받아 in 배열에 저장
+    for (int i = 0; i < num; i++)
+    {
+        scanf("%d",&in[i]);
+    }
+    
+    //check 후 out 배열에 저장
+    for (int i=0; i<num; i++)
+    {
+        int cnt[10]={0,};
+        while(in[i]!=0)
+        {
+            for (int j=0; j<10; j++)
+            {
+                if(in[i]%10==check[j])
+                {
+                    cnt[j]++;
+                }
+            }
+            in[i]/=10;
+        }
+        
+        for (int k=0; k<10; k++)
+        {
+            if(cnt[k]!=0)
+                out[i]++;
+        }
+    }
+    
+    //값 출력
+    for (int i=0; i<num; i++)
+    {
+        printf("%d\n",out[i]);
+    }
+    return 0;
+}
