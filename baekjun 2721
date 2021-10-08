@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int hap(int a)
+{
+    int sum=0;
+    for (int i=1;i<=a; i++)
+    {
+        sum+=i;
+    }
+    return sum;
+}
+
+int mul(int a)
+{
+    int sum=0;
+    for (int i=1; i<=a; i++)
+    {
+        sum+=i*hap(i+1);
+    }
+    return sum;
+}
+
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    int arr[num];
+    
+    for (int i=0; i<num; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    
+    for (int i=0; i<num; i++)
+    {
+        printf("%d\n",mul(arr[i]));
+    }
+    return 0;
+}
+
